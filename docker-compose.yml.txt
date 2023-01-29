@@ -12,13 +12,13 @@ env_file: ./.env
 
 environment:
 
-- MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+- MYSQL_ROOT_PASSWORD=root
 
-- MYSQL_DATABASE=$MYSQLDB_DATABASE
+- MYSQL_DATABASE=achatproject
 
 ports:
 
-- $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+- 3306:3306
 
 volumes:
 
@@ -30,7 +30,7 @@ depends_on:
 
 - mysqldb
 
-image: bader123/tpachatproject:latest
+image: bader123/tpachatproject:40
 
 restart: on-failure
 
@@ -44,11 +44,11 @@ environment:
 
 SPRING_APPLICATION_JSON: '{
 
-"spring.datasource.url" : "jdbc:mysql://mysqldb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=false",
+"spring.datasource.url" : "jdbc:mysql://mysqldb:3306/achatproject?useSSL=false",
 
-"spring.datasource.username" : "$MYSQLDB_USER",
+"spring.datasource.username" : "root",
 
-"spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
+"spring.datasource.password" : "root",
 
 "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
 
