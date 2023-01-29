@@ -1,6 +1,6 @@
 pipeline {
     environment{
-    registry="bader123/tpAchatProject-1.0"
+    registry="bader123/tpAchatProject"
     registryCredential='dockerHub'
     dokerImage="tpachatproject"
 }
