@@ -1,7 +1,7 @@
 pipeline {
     environment{
-    registry="bader123/tpAchatProject"
-    registryCredential='dockerHub'
+    registry="bader123/tpachatproject"
+    registryCredential='119e1ac9-a1f7-4ee9-8348-6d7262332cad'
     dokerImage="tpachatproject"
 }
     agent any
