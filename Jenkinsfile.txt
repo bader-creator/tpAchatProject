@@ -36,7 +36,7 @@ pipeline {
         stage("SonarQube Analysis") {
           agent any  
            steps {
-                  sh "mvn clean verify sonar:sonar -Dsonar.projectKey=AchatProject -Dsonar.host.url=http://192.168.1.26:9000 -Dsonar.login=squ_d3434dc585276b710b7140c40c3e7fe73b03702e"
+                  sh "mvn clean verify sonar:sonar -Dsonar.projectKey=AchatProject -Dsonar.host.url=http://192.168.1.21:9000 -Dsonar.login=squ_d3434dc585276b710b7140c40c3e7fe73b03702e"
                   echo 'sonar static analysis done'
            }
          }
@@ -51,7 +51,7 @@ pipeline {
         stage("Nexus Deploy") {
             steps {
                 script {
-                    sh "mvn clean package deploy:deploy -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.26:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar"
+                    sh "mvn clean package deploy:deploy -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.21:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.jar"
                 }
             }
         }
