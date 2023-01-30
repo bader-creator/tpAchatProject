@@ -46,7 +46,7 @@ pipeline {
        stage("docker build") {
                        steps{
                          script {
-                            sh "docker build -t bader123/tpachatproject -f ./Dockerfile.txt ."
+                            sh "docker build -t docker-whale ."
                        }
                  }
        }
