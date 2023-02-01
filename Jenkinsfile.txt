@@ -43,7 +43,7 @@ pipeline {
                sh 'mvn package'
           }
        }
-  	stage('maven package') {
+  	stage('display contents') {
              steps {
                sh 'ls'
           }
