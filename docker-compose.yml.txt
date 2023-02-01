@@ -30,7 +30,7 @@ depends_on:
 
 - mysqldb
 
-image: bader123/tpachatproject:40
+image: bader123/achatproject:40
 
 restart: on-failure
 
