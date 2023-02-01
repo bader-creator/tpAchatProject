@@ -43,6 +43,11 @@ pipeline {
                sh 'mvn package'
           }
        }
+  	stage('maven package') {
+             steps {
+               sh 'ls'
+          }
+       }
        stage("docker build") {
                        steps{
                          script {
