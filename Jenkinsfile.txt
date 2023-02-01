@@ -1,7 +1,7 @@
 pipeline {
     environment{
-    registry="bader123/tpachatproject"
-    registryCredential='dockerHub'
+    registry="bader123/achatproject"
+    registryCredential=‘dockerHub’
     dokerImage="tpachatproject"
 }
     agent any
@@ -46,7 +46,7 @@ pipeline {
        stage("docker build") {
                        steps{
                          script {
-                            sh "docker build -t docker-whale ."
+                            dockerImage = docker.build registry + ":$BUILD_NUMBER"
                        }
                  }
        }
