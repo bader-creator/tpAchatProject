@@ -45,7 +45,7 @@ pipeline {
        }
        stage("docker build") {
                        steps{
-                           sh 'docker build -t test_image -f ".\Dockerfile.txt" .'
+                           sh "docker build -t test_image -f '.\Dockerfile.txt' ."
                  	}
        }
        stage("docker push") {
